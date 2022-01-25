@@ -1,0 +1,40 @@
+<div class="container">
+    
+    <div class="form-register">
+        <form [formGroup] ="registerForm" class="form">
+            <mat-form-field appearance="outline"> 
+                <mat-label>Nume</mat-label>
+                <input matInput placeholder="nume" formControlName="nume"/>
+            </mat-form-field>
+            <mat-form-field appearance="outline"> 
+                <mat-label>Prenume</mat-label>
+                <input matInput placeholder="prenume" formControlName="prenume"/>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline"> 
+                <mat-label>Rol *</mat-label>
+                <input matInput placeholder="rol" formControlName="rol"/>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline"> 
+                <mat-label>Telefon</mat-label>
+                <input matInput placeholder="telefon" formControlName="telefon"/>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline"> 
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" formControlName="email"/>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline"> 
+                <mat-label>Parola</mat-label>
+                <input matInput placeholder="parola"  formControlName="password"/>
+            </mat-form-field>
+        </form>
+        <div class="butoane">
+            <button (click)="register()"> Inregistrare </button>
+        </div>
+
+        <p>* Daca esti angajat te rugam sa specifici job-ul tau in campul 'Rol'!</p>
+    </div>
+

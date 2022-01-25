@@ -1,0 +1,99 @@
+<div id="conectare">
+    <p> Te-ai conectat ca {{loggedUser.username}} !</p>
+</div>
+
+
+<div id="mySidenav" class="sidenav">
+    <a (click)="logout()"  id = "out">Logout</a>
+  </div>
+
+<div id = "desfasurator">
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            Contul meu
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div id ="datele-mele"></div>
+      <div class="telForm">
+        <form [formGroup] ="telForm" class="form">
+            <mat-form-field appearance="outline"> 
+                <mat-label>Telefon nou</mat-label>
+                <input matInput placeholder="telefon" formControlName="telefon"/>
+            </mat-form-field>
+        </form>
+        <button (click) = "update()">Schimba telefonul</button>
+            
+        </div>
+      
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+            Comenzile mele
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <table mat-table [dataSource]="comenzi" class="mat-elevation-z8">
+
+    
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Id </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="data">
+          <th mat-header-cell *matHeaderCellDef> Data </th>
+          <td mat-cell *matCellDef="let element"> {{element.data}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="valoare">
+          <th mat-header-cell *matHeaderCellDef> Valoare (RON)</th>
+          <td mat-cell *matCellDef="let element"> {{element.val}} </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState = true"
+                         (closed)="panelOpenState = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+           Formular Feedback
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="container">
+    
+        <div class="form-feedback">
+            <form [formGroup] ="feedbackForm" class="form">
+                <mat-form-field appearance="outline"> 
+                    <mat-label>Nume</mat-label>
+                    <input matInput placeholder="nume" formControlName="nume"/>
+                </mat-form-field>
+    
+                <mat-form-field appearance="outline"> 
+                    <mat-label>Prenume</mat-label>
+                    <input matInput placeholder="prenume" formControlName="prenume"/>
+                </mat-form-field>
+                <mat-form-field appearance="outline"> 
+                    <mat-label >Mesaj</mat-label>
+                    <input matInput placeholder="mesaj" formControlName="mesaj"/>
+                </mat-form-field>
+            </form>
+            <div class="butoane">
+                <button (click)="trimite()"> Trimite </button>
+                
+            </div>
+        </div>
+        
+    </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+
+</div>

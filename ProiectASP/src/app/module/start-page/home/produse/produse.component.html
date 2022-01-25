@@ -1,0 +1,48 @@
+<div class="categorie">
+    <h1>Produse</h1>
+    <p>Alege categoria pentru a putea vedea produsele.</p>
+    
+    <div id="lista-categ"></div> 
+    <div id="allProd"> </div> 
+    <div id="prod">
+        <table mat-table [dataSource]="listaProduse" matSort (matSortChange)="announceSortChange($event)" class="mat-elevation-z8">
+
+           
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> Id Produs </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="nume">
+              <th mat-header-cell *matHeaderCellDef> Nume </th>
+              <td mat-cell *matCellDef="let element"> {{element.nume}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="pret">
+              <th mat-header-cell *matHeaderCellDef> Pret (RON) </th>
+              <td mat-cell *matCellDef="let element"> {{element.pret}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="add">
+                <th mat-header-cell *matHeaderCellDef> Adauga in cos </th>
+                <td mat-cell *matCellDef="let element" (click) = "addToCart(element)"> 
+                  <mat-icon>
+                    add_shopping_cart
+                  </mat-icon> </td>
+                
+              </ng-container>
+            
+          
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+         
+
+
+    </div>
+</div>
+
+
+

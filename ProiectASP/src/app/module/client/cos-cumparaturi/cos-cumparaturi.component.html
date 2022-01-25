@@ -1,0 +1,34 @@
+<table mat-table [dataSource]="cumpar" matSort  class="mat-elevation-z8">
+
+           
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id Produs </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="nume">
+      <th mat-header-cell *matHeaderCellDef> Nume </th>
+      <td mat-cell *matCellDef="let element"> {{element.nume}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="pret">
+      <th mat-header-cell *matHeaderCellDef> Pret (RON) </th>
+      <td mat-cell *matCellDef="let element"> {{element.pret}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Sterge din cos </th>
+        <td mat-cell *matCellDef="let element" (click) = 'sterg(cumpar.indexOf(element))' > 
+          <mat-icon>
+            delete
+          </mat-icon> </td>
+        
+      </ng-container>
+    
+  
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <button id="trimite" (click)="plasez()">Plaseaza comanda</button>

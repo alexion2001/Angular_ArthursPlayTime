@@ -1,0 +1,76 @@
+p{
+    position: relative;
+    top: 20px;
+    color: white;
+}
+
+mat-accordion{
+  position: relative;
+    top: 70px;
+   
+}
+
+
+#mySidenav a {
+  position: absolute;
+  left: -137px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 250px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  
+}
+
+#mySidenav a:hover {
+  left: 0;
+  background-color: #555
+}
+
+table {
+  width: 100%;
+}
+
+#out {
+  top:125px;
+  background-color: #f44336;
+}
+
+
+.container{
+  color: white;
+  position: relative;
+  
+  display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around; 
+      text-align: center;
+     
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: rgb(224, 57, 57);
+}
+
+// mat-input carent color
+::ng-deep .mat-input-element {
+  caret-color: rgb(224, 57, 57);
+}
+
+// mat-label focused style
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: rgb(224, 57, 57);
+}
+
+  .form{
+      .mat-form-field{
+           width: 100%;   
+      }  
+      
+  }
+
+}
+

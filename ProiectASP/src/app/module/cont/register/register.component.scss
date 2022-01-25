@@ -1,0 +1,39 @@
+.container{
+    color: white;
+    position: relative;
+    top: 20px;
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around; 
+        text-align: center;
+       
+ 
+
+p{
+    position: relative;
+    top: 20px;
+}
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: rgb(224, 57, 57);
+}
+
+// mat-input carent color
+::ng-deep .mat-input-element {
+    caret-color: rgb(224, 57, 57);
+}
+
+// mat-label focused style
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: rgb(224, 57, 57);
+}
+
+    .form{
+        .mat-form-field{
+             width: 100%;   
+        }  
+    }
+
+}

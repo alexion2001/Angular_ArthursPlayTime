@@ -1,0 +1,28 @@
+
+<div class="message">
+    <p>Te rugam sa te conectezi pentru a putea accesa paginile 'Contul meu' sau 'Cos de cumparaturi'.</p>
+    <p>Daca inca nu ai un cont poti crea oricand unul din sectiunea 'Register'.</p>
+    
+</div>
+<div class="container">
+    
+    <div class="form-login">
+        <form [formGroup] ="loginForm" class="form">
+            <mat-form-field appearance="outline"> 
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" formControlName="email"/>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline"> 
+                <mat-label>Parola</mat-label>
+                <input matInput placeholder="parola"  formControlName="password"/>
+            </mat-form-field>
+        </form>
+        <div class="butoane">
+            <button (click)="login()"> Login </button>
+            <button (click)="logout()"> Logout </button>
+        </div>
+    </div>
+    
+</div>
+
